@@ -1,0 +1,67 @@
+.<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>JSON Correios</title>
+  </head>
+  <body>
+    <div class="container">
+        <fieldset class="col-6 offset-3">
+                <legend class="text-center">Busca de endereço pelo JSON</legend>
+                <form>
+                    <div class="form-group">
+                        <label for="cep_id">CEP</label>
+                        <input type="text" class="form-control" id="cep_id" aria-describedby="cepSearch" placeholder="Informe o CEP">
+                        <small id="cepSearch" class="form-text text-muted">Informe o CEP para efetuar a busca dinamica.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="logradouro_id">Logradouro</label>
+                        <input type="text" onkeyup="exibeLogradouro()" class="form-control" id="logradouro_id" placeholder="Informe o logradouro">
+                    </div>
+                    <div class="form-group">
+                        <label for="bairro_id">Bairro</label>
+                        <input type="text" class="form-control" id="bairro_id" placeholder="Informe o bairro">
+                    </div>
+                    <div class="form-group">
+                        <label for="cidade_id">Cidade</label>
+                        <input type="text" class="form-control" id="cidade_id" placeholder="Informe o cidade">
+                    </div>
+                    <div class="form-group">
+                        <label for="estado_id">Estado</label>
+                        <input type="text" class="form-control" id="estado_id" placeholder="Informe o estado">
+                    </div>
+                <div class="form-group">
+                <label for="range_id">Range</label>
+                <imput type="range" id="spin" min="1" max="10" class="form-control" id="range_id">
+                <small class="form-text text muted">Valor<span id="valor"></span></small>
+                </div>
+                    <button type="button" onclick="exibeLogradouro()" class="btn btn-primary">Enviar</button>
+                </form>
+        </fieldset>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  
+    <script>
+        function exibeLogradouro(){
+            var logradouro = document.getElementById("logradouro_id").value;
+            console.log(logradouro);
+        }
+
+        document.getElementById("spin").addEventListener("change", fuction(){
+            document.getElementById("valor").innerHTML = this.value;
+        });
+    </script>
+
+</body>
+</html>
