@@ -1,0 +1,64 @@
+.<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title></title>
+  </head>
+  <body>
+
+        <div class="container text-center"> 
+            <div class="jumbotron">
+                <h4></h4>
+            </div>
+
+    <div class="container">
+        <fieldset class="col-6 offset-3">
+                <legend>Entre com os dados</legend>
+                <div class="form-group">
+                    <label for="iddistancia">Distância</label>
+                    <input class="form-control" type="number" step="any" min="0" id="iddistancia" required>
+                </div>
+                <div class="form-group">
+                    <label for="idlitros">Litros Combustível</label>
+                    <input class="form-control" type="number" step="any" min="0" id="idlitros" required>
+                </div>
+                <div class="form-group" role="group" aria-label="send button">
+                    <button type="button" class="btn btn-secondary" onclick="consumoMedio()">Calcular</button>
+                </div>
+                <p id="result" class="text-left"></p>
+        </fieldset>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  
+    <script>
+       var enunciado = 
+       "Implemente um programa para determinar o consumo médio de um automóvel através da fórmula: Consumo Médio = Distância / Litros de Combustível consumido.";
+
+       //insere o enunciado no H4
+       document.getElementsByTagName("h4")[0].innerHTML = enunciado;
+
+       function consumoMedio(){
+            var distancia = document.getElementById("iddistancia").value;
+            var litros = document.getElementById("idlitros").value;
+            var consumo = consumo = distancia / litros;
+
+            document.getElementById("result").innerHTML = `O consumo médio é: ${consumo}`;
+
+
+
+       }
+    </script>
+
+</body>
+</html>
